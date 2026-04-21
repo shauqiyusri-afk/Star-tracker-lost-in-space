@@ -21,6 +21,23 @@ Pipeline stages:
 5. Outlier rejection using RANSAC
 6. Attitude estimation using quaternion solvers
 
+Image Frame
+     ↓
+Star Detection
+     ↓
+Centroid Extraction
+     ↓
+Star Pair Generation
+     ↓
+Pattern Identification
+(Geometric / Hough)
+     ↓
+Outlier Filtering (Optional)
+(RANSAC)
+     ↓
+Attitude Determination
+(QUEST / Davenport)
+
 ---
 
 ## Algorithms Implemented
@@ -58,6 +75,14 @@ Both solvers produce consistent quaternion solutions when sufficient star matche
 - OpenCV
 - Hipparcos Star Catalog
 - Stellarium simulation for testing
+
+---
+
+## Results
+
+Preliminary testing shows that geometric voting and Hough-based identification both provide sufficient star matches for reliable attitude estimation. When enough stars are identified, QUEST and Davenport methods produce identical quaternion solutions, confirming solver consistency.
+
+Further evaluation focuses on robustness, processing speed, and performance under noisy star fields.
 
 ---
 
