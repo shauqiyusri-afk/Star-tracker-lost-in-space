@@ -8,9 +8,11 @@ The system detects stars from an image frame, identifies star patterns by matchi
 
 ## Project Overview
 
-Modern spacecraft rely on **star sensors (star trackers)** to determine their orientation in space with extremely high accuracy. In Lost-In-Space mode, the spacecraft has no prior knowledge of its attitude, requiring the system to identify star patterns directly from the observed star field.
+Star trackers are among the most accurate attitude determination sensors used in modern space missions. They determine spacecraft orientation by observing star fields and matching detected stars with a known star catalog.
 
-This project implements a complete pipeline for star pattern recognition and attitude determination.
+In **Lost-In-Space (LIS) mode**, the star tracker must identify stars from an observed image **without any prior attitude information**. This requires reliable star pattern recognition to match detected stars against a star catalog. The efficiency of star identification directly influences the accuracy and robustness of spacecraft navigation, especially in deep-space or lunar missions where traditional navigation aids (e.g., GNSS/GPS) are unavailable.
+
+This project focuses on developing and evaluating a **star pattern recognition pipeline for LIS mode attitude determination** using simulated star images and catalog-based matching techniques.
 
 Pipeline stages:
 
